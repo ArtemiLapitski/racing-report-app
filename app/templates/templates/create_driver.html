@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload files</title>
+   <style>
+      td {
+         padding-right: 100px;
+         }
+   </style>
+</head>
+<body>
+    <h1>Add a record:</h1>
+    <form action="/add_driver" method="POST">
+
+        {% for field in form %}
+            <br>
+            {{ field.label }}
+            <br>
+            {{ field }}
+                {% if field.errors %}
+                <div class="errors">
+                    {% for error in field.errors %}
+                        Error: {{ error }}
+                        <br>
+                    {% endfor %}
+                </div>
+                {% endif %}
+        {% endfor %}
+
+        <br>
+        <br>
+
+        <button type="submit">Add a record</button>
+    </form>
+
+    <br>
+
+    <div class="success">
+    {% if success_msg %}
+       {{ success_msg }}
+    {% endif %}
+    </div>
+
+    <br>
+    <a href="{{ url_for('reportresource') }}">Show Report</a>
+    <br>
+
+</body>
+</html>

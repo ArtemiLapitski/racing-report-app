@@ -1,0 +1,29 @@
+Create a driver using API
+This is using yaml for specifications.
+---
+  parameters:
+    - in: body
+      name: Racer
+      description: The racer to create.
+      schema:
+        type: object
+        required:
+          - name
+          - abbr
+          - car
+          - start
+          - end
+        properties:
+          name:
+            type: string
+          abbr:
+            type: string
+          car:
+            type: string
+          start:
+            type: string
+          end:
+            type: string
+  responses:
+    201:
+      description: Created

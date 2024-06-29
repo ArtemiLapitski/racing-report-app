@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of driver's names and codes:</title>
+</head>
+<body>
+    <h1>List of driver's names and codes:</h1>
+    <div class="drivers">
+   {% for abbr, name in report %}
+      <p><a href="{{ url_for('onedriverresource', driver_id=abbr) }}">{{ abbr }}</a> - {{ name }} </p>
+   {% endfor %}
+    </div>
+</body>
+</html>

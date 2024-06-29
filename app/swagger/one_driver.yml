@@ -1,0 +1,21 @@
+Example endpoint returning statistics on a driver
+This is using yaml for specifications.
+---
+ parameters:
+    - in: query
+      name: order
+      schema:
+        type: string
+        enum:
+          - desc
+          - asc
+      description: Order of the report
+    - in: path
+      name: driver_id
+      schema:
+        type: string
+      description: Driver_id to get driver's statistics
+
+ responses:
+   200:
+     description: Statistics on a driver

@@ -1,0 +1,16 @@
+Example endpoint returning a list of drivers
+This is using yaml for specifications.
+---
+ parameters:
+    - in: query
+      name: order
+      schema:
+        type: string
+        enum:
+          - desc
+          - asc
+      description: Order of the report
+
+ responses:
+   200:
+     description: List of drivers

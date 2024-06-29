@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monaco Racing Report 2018</title>
+</head>
+<body>
+    <h1>Monaco Racing Report 2018</h1>
+
+    <div class="report">
+
+    {% if number_of_results > number_of_racers_before_underline %}
+
+        {% for (abbr, name), data in report_list[:number_of_racers_before_underline] %}
+
+            <p>{{data.position}}. {{name}} | {{data.car}} | {{data.result}}</p>
+
+        {% endfor %}
+
+        <p>{{ underline }}</p>
+
+        {% for (abbr, name), data in report_list[number_of_racers_before_underline:] %}
+            <p>{{data.position}}. {{name}} | {{data.car}} | {{data.result}}</p>
+        {% endfor %}
+
+    {% else %}
+
+        {% for (abbr, name), data in report_list %}
+
+            <p>{{data.position}}. {{name}} | {{data.car}} | {{data.result}}</p>
+
+        {% endfor %}
+
+    {% endif %}
+
+    </div>
+
+
+</body>
+</html>
+

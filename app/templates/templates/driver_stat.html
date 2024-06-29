@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver's Stat</title>
+</head>
+<body>
+    <div class="driver_stat">
+   {% for abbr_name, data in report.items() %}
+        <h1>Statistics on {{ abbr_name[1] }}:</h1>
+        <p>Position: {{ data.position }}</p>
+        <p>Time: {{ data.result }}</p>
+        <p>Car: {{ data.car }}</p>
+        <p>Abbreviation: {{ abbr_name[0] }}</p>
+   {% endfor %}
+    </div>
+</body>
+</html>
